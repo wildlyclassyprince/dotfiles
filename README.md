@@ -1,2 +1,2 @@
 # vim
-Vi/Vim settings.
+Vim settings.
