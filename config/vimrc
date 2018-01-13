@@ -1,0 +1,44 @@
+" clear any existing auto commands
+autocmd!
+
+syntax on
+filetype on
+colorscheme pablo
+
+" make searches case insensitive:
+set ignorecase
+set smartcase
+
+" show the best match so far as search strings are typed:
+set incsearch
+
+set number
+
+" setting 100 lines of commandline history:
+set history=100
+
+" don't have files attempting to override this .vimrc:
+set nomodeline
+
+" don't make it look line there are line breaks were there aren't:
+set nowrap
+
+" use indents of 4 spaces, and have them copied down lines:
+set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
+set expandtab
+
+" syntax:
+set syntax=ah
+set hlsearch
+
+" normally don't automatically format `text' as it is typed, IE only do this
+" with comments, at 79 characters:
+set formatoptions-=t
+set textwidth=79
+
+" autoindentation
+set autoindent
+
+autocmd BufRead,BufWritePre *.sh normal gg=G
