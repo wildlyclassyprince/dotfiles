@@ -1,6 +1,7 @@
 #! /bin/bash --
 
 # get-updates.sh
+# ----------------------------------------------------------------------------
 # Action:
 # Check for Updates - Download Updates - Install Updates - Remove Deprecations
 # ----------------------------------------------------------------------------
