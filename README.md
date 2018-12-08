@@ -1,2 +1,2 @@
 # vim
-Vim settings & automation scripts.
+Vim settings & Bash shell automation scripts.
