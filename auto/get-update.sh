@@ -20,12 +20,12 @@
 # Usage:
 usage()
 {
-	echo "Usage -$0 [ -uiUa ]"
+	echo "Usage -$0 [ -uiUa ] [ -d package_name ] [ -b package_name ]"
 	exit 2
 }
 
 # Options
-while getopts ":u, :i, :U, :a" opt; do
+while getopts ":u, :i, :U, :a, :b::, :d::" opt; do
 	case ${opt} in
 		u ) echo "Getting updates ..."
 			sudo apt-get update;;
@@ -35,6 +35,12 @@ while getopts ":u, :i, :U, :a" opt; do
 			sudo apt-get upgrade;;
 		a ) echo "Removing deprecated packages ..."
 			sudo apt-get autoremove;;
+		# This option carries out a basic upgrade of the package.
+		b ) echo "Basic upgrading ${OPTARG}"
+			sudo apt-get upgrade ${OPTARG};;
+		# This option carries out a smart upgrade of the package.
+		d ) echo "Smart upgrading ${OPTARG}"
+			sudo apt-get dist-upgrade ${OPTARG};;
 		h|? ) echo "Invalid entry."
 			  usage
 			  ;;
