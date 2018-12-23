@@ -1,4 +1,4 @@
-#! /bin/bash --
+#!/bin/bash --
 
 # get-updates.sh
 # ----------------------------------------------------------------------------
@@ -16,11 +16,13 @@
 # U : Install the downloaded updates.
 #
 # a : Remove deprecated packages.
+#
+# p : Install new package.
 
 # Usage:
 usage()
 {
-	echo "Usage -$0 [ -uiUa ] [ -d package_name ] [ -b package_name ]"
+	echo "Usage -$0 [ -uiUa ] [ -d package_name ] [ -b package_name ] [ -p package_name]"
 	exit 2
 }
 
@@ -41,9 +43,11 @@ while getopts ":u, :i, :U, :a, :b::, :d::" opt; do
 		# This option carries out a smart upgrade of the package.
 		d ) echo "Smart upgrading ${OPTARG}"
 			sudo apt-get dist-upgrade ${OPTARG};;
+		# Installs new package
+		p ) echo "Installing ${OPTARG}"
+			sudo apt install ${OPTARG};;
 		h|? ) echo "Invalid entry."
-			  usage
-			  ;;
+			  usage;;
 	esac
 done
 shift $(( OPTIND -1 ))
