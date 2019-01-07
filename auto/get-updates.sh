@@ -1,4 +1,4 @@
-#!/bin/bash --
+#! /bin/bash --
 
 # get-updates.sh
 # ----------------------------------------------------------------------------
@@ -30,19 +30,19 @@ usage()
 while getopts ":u, :i, :U, :a, :b::, :d::" opt; do
 	case ${opt} in
 		u ) echo "Getting updates ..."
-			sudo apt-get update;;
+			sudo apt update;;
 		i ) echo "Downloading updates ..."
-			sudo apt-get install;;
+			sudo apt install;;
 		U ) echo "Installing updates ..."
-			sudo apt-get upgrade;;
+			sudo apt upgrade;;
 		a ) echo "Removing deprecated packages ..."
-			sudo apt-get autoremove;;
+			sudo apt autoremove;;
 		# This option carries out a basic upgrade of the package.
 		b ) echo "Basic upgrading ${OPTARG}"
-			sudo apt-get upgrade ${OPTARG};;
+			sudo apt upgrade ${OPTARG};;
 		# This option carries out a smart upgrade of the package.
 		d ) echo "Smart upgrading ${OPTARG}"
-			sudo apt-get dist-upgrade ${OPTARG};;
+			sudo apt dist-upgrade ${OPTARG};;
 		# Installs new package
 		p ) echo "Installing ${OPTARG}"
 			sudo apt install ${OPTARG};;
