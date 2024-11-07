@@ -4,6 +4,7 @@ autocmd!
 syntax on
 filetype on
 colorscheme pablo
+" colorscheme delek
 
 " make searches case insensitive:
 set ignorecase
@@ -12,10 +13,8 @@ set smartcase
 " show the best match so far as search strings are typed:
 set incsearch
 
-set number
-
 " setting 100 lines of commandline history:
-set history=100
+set history=1000
 
 " don't have files attempting to override this .vimrc:
 set nomodeline
@@ -25,8 +24,8 @@ set nowrap
 
 " use indents of 4 spaces, and have them copied down lines:
 set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
+set shiftwidth=4 smarttab
+set softtabstop=0 noexpandtab
 set expandtab
 
 " syntax:
